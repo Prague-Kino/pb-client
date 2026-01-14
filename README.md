@@ -1,0 +1,2 @@
+# pb-client
+Pocketbase integration
