@@ -1,0 +1,6 @@
+github.com/Prague-Kino/cast v0.0.0-20260509000848-7dff4b5f6665 h1:wawRzfzAm1W9UA9ETWPGNogpjZPhmbeVMROZzqamqtw=
+github.com/Prague-Kino/cast v0.0.0-20260509000848-7dff4b5f6665/go.mod h1:v8bq8A5RyqauGVkATitDogpH+Z97fgwyzKxyesVIF08=
+github.com/Prague-Kino/cast v0.0.0-20260509214147-695ed62f8ecc h1:ik1kcoFoYSVq8QUM+tD99vWltf0X3GM3LWcj8lVrLhU=
+github.com/Prague-Kino/cast v0.0.0-20260509214147-695ed62f8ecc/go.mod h1:v8bq8A5RyqauGVkATitDogpH+Z97fgwyzKxyesVIF08=
+github.com/joho/godotenv v1.5.1 h1:7eLL/+HRGLY0ldzfGMeQkb7vMd0as4CfYvUVzLqw0N0=
+github.com/joho/godotenv v1.5.1/go.mod h1:f4LDr5Voq0i2e/R5DDNOoa2zzDfwtkZa6DnEwAbqwq4=
