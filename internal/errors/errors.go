@@ -53,7 +53,7 @@ func (e PocketBaseError) Error() string {
 		message = fmt.Sprintf(
 			"%s\n \t> %s\n",
 			message,
-			strings.Join(details, ", "),
+			strings.Join(details, "\n\t> "),
 		)
 	}
 

@@ -15,13 +15,13 @@ import (
 
 type Payload map[string]string
 
-func GetAuthToken() (string, error) {
+func GetAuthToken(baseURL string) (string, error) {
 	envVars := env.GetEnvVars()
 
 	payload := createAuthRequestPayload(envVars)
 	body, _ := json.Marshal(payload)
 
-	fullURL := getAuthWithPasswordEndpoint(envVars.BaseURL)
+	fullURL := getAuthWithPasswordEndpoint(baseURL)
 
 	resp, err := http.Post(fullURL, "application/json", bytes.NewBuffer(body))
 	if err != nil {

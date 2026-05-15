@@ -1,6 +1,4 @@
-// TODO delete debug prints
-
-package record
+package api
 
 import (
 	"bytes"
@@ -15,13 +13,31 @@ import (
 	pb "github.com/Prague-Kino/pb-client/internal/pocketbase"
 )
 
-func CreateKino(kino *cast.Kino, token string) error {
+func (p *PocketBase) CreateKino(kino *cast.Kino) error {
 	body, err := json.Marshal(kino)
 	if err != nil {
 		return err
 	}
 
-	return createRecord(pb.KinoCollection, token, body)
+	return createRecord(pb.KinoCollection, p.authToken, body)
+}
+
+func (p *PocketBase) CreateFilm(kino *cast.Film) error {
+	body, err := json.Marshal(kino)
+	if err != nil {
+		return err
+	}
+
+	return createRecord(pb.FilmCollection, p.authToken, body)
+}
+
+func (p *PocketBase) CreateScreening(kino *cast.Screening) error {
+	body, err := json.Marshal(kino)
+	if err != nil {
+		return err
+	}
+
+	return createRecord(pb.ScreeningCollection, p.authToken, body)
 }
 
 // --------------------------------------
