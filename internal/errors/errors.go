@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"strings"
+
+	"github.com/Prague-Kino/pb-client/models"
 )
 
 func PBErrorFromResponse(statusCode int, respBody []byte) error {
@@ -82,4 +84,63 @@ type RecordCreateResponseReadError struct {
 
 func (e RecordCreateResponseReadError) Error() string {
 	return fmt.Sprintf("Failed to read record creation response body: %s", e.Err)
+}
+
+type HttpGetError struct {
+	Url string
+	Err error
+}
+
+func (e *HttpGetError) Error() string {
+	return fmt.Sprintf(
+		"Error fetching data.\nURL: %s\nError: %s",
+		e.Url,
+		e.Err,
+	)
+}
+
+type InvalidResponseError struct {
+	Url string
+	Err error
+}
+
+func (e *InvalidResponseError) Error() string {
+	return fmt.Sprintf(
+		"Invalid body response.\nURL: %s\nError: %s",
+		e.Url,
+		e.Err,
+	)
+}
+
+type KinoNotFoundError struct {
+	Filter models.Filter
+}
+
+func (e *KinoNotFoundError) Error() string {
+	return fmt.Sprintf(
+		"Kino with filter [%s] not found",
+		e.Filter.String(),
+	)
+}
+
+type FilmNotFoundError struct {
+	Filter models.Filter
+}
+
+func (e *FilmNotFoundError) Error() string {
+	return fmt.Sprintf(
+		"Film with filter [%s] not found",
+		e.Filter.String(),
+	)
+}
+
+type ScreeningNotFoundError struct {
+	Filter models.Filter
+}
+
+func (e *ScreeningNotFoundError) Error() string {
+	return fmt.Sprintf(
+		"Screening with filter [%s] not found",
+		e.Filter.String(),
+	)
 }

@@ -31,8 +31,8 @@ func (p *PocketBase) CreateFilm(kino *cast.Film) error {
 	return createRecord(pb.FilmCollection, p.authToken, body)
 }
 
-func (p *PocketBase) CreateScreening(kino *cast.Screening) error {
-	body, err := json.Marshal(kino)
+func (p *PocketBase) CreateScreening(screening *cast.Screening) error {
+	body, err := json.Marshal(screening)
 	if err != nil {
 		return err
 	}
